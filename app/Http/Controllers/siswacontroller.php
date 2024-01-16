@@ -9,6 +9,10 @@ use Illuminate\Support\Facades\Hash;
 
 class siswacontroller extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth:api', ['except' => ['login', 'register']]);
+    }
     public function getsiswa()
     {
         $dt_siswa = siswa::get();

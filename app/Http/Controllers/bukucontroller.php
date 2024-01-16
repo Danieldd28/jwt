@@ -9,6 +9,10 @@ use Illuminate\Http\Request;
 
 class bukucontroller extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth:api', ['except' => ['login', 'register']]);
+    }
     public function getbuku()
     {
         $dt_buku = buku::get();

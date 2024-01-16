@@ -12,6 +12,10 @@ use Illuminate\Support\Carbon;
 
 class transaksicontroller extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth:api', ['except' => ['login', 'register']]);
+    }
     public function pinjambuku(Request $req)
     {
         $validator = Validator::make($req->all(), [
