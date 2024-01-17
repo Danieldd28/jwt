@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\siswa;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Foundation\Auth\buku as Authenticatable;
+
 
 class siswacontroller extends Controller
 {
